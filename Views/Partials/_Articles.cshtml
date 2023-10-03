@@ -1,0 +1,58 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent;
+
+
+<!-- Articles -->
+<section class="mainnews" >
+    <div class="container">
+        <div class="section-title">Article & News</div>
+        <div class="section-heading">                
+            <h6>Our News & Articles</h6>
+            <a href=feature.html class="btn-blank"><span>Browse Articles <i class="fa-solid fa-arrow-up-right"></i></span></a>
+        </div> 
+
+        <div class="wrapper">
+            <div class="inner">
+                @{
+                	var selection = Umbraco.Content(Guid.Parse("1a027da6-20b5-4449-9b74-f429740d4321"))
+                    .ChildrenOfType("article")
+                    .Where(x => x.IsVisible())
+                    .OrderByDescending(x => x.CreateDate).ToList();
+                }
+            
+            	@foreach (var item in selection)
+            	{
+            	
+                	var url = item.Url();
+                    var name = item.Name();
+                    var date = item.CreateDate;
+                    var image = item.Value<IPublishedContent>("articleImage");
+                    var category = item.Value("articleCategory");
+                    var preamble = item.Value("articlePreamble");
+            		
+                    <div class="mainnews_box">
+                        <div class="__image">
+                            <a href="@url"><img src="@image?.Url()" alt="@name"></a> 
+                            <span>
+                            <h3>@date.ToString("dd")</h3>
+                            <h4>@date.ToString("MMM")</h4>
+                            </span>
+                        </div>
+                        <div class="__details">
+                            <h4>@category</h4>
+                            <h3>@name</h3> 
+                            <h4>@preamble</h4>
+                        </div>     
+                    </div> 
+            	}
+            </div>
+        </div>
+        
+        <div class="map">
+            <button class="active first"></button>
+            <button class="second"></button>
+            <button class="third"></button>
+        </div>
+        
+    </div>
+</section>

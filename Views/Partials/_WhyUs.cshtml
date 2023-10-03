@@ -1,0 +1,27 @@
+﻿@using Umbraco.Cms.Core.Models;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+
+<!-- Why Us -->
+<section class="whyus">
+    <div class="container">
+        <div class="section-title">@Model.Value("whyUsTitle")</div> 
+        <div class="whyus-grid">
+            <div class="tool-boxes">
+                <h2>@Model.Value("whyUsHeading")</h2> 
+                    <div class="umb-block-list">@Html.GetBlockListHtml(Model.WhyUsTools)
+                </div>
+            </div> 
+            <div class="tools_image">
+                <div class="__background"></div>
+                    @{
+                        var whyUsImage = Model.Value<MediaWithCrops>("whyUsImage");
+                        if (whyUsImage != null)
+                        {
+                            <img src="@whyUsImage.MediaUrl()" alt="@Model.Value("whyUsHeading")">
+                        }
+                    }                   
+            </div>
+        </div> 
+    </div> 
+</section>
