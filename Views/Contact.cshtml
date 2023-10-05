@@ -4,3 +4,65 @@
 @{
 	Layout = "SubPages.cshtml";
 }
+
+<!-- Contact -->
+<section class="contact">
+    <div class="container">
+        <div class="__contactboxes">
+                <div class="__contactbox">                
+                    <div class="__icon"><i class="fa-sharp fa-solid fa-location-dot"></i></div>                    
+                    <div>
+                        <h3>Visit us</h3>
+                        <h4>Sveavägen 31</h4>
+                        <h4>111 34 STOCKHOLM</h4>
+                    </div>
+                </div>
+                <div class="__contactbox">                
+                    <div class="__icon"><i class="fa-sharp fa-solid fa-phone"></i></div>                         
+                    <div>
+                        <h3>Call us</h3>
+                        <h4>+46 (8) 121 470 50</h4>
+                        <h4>+46 (8) 121 470 51</h4>
+                    </div>
+                </div>
+                <div class="__contactbox">                
+                    <div class="__icon"><i class="fa-sharp fa-solid fa-envelope"></i></div>                          
+                    <div>
+                        <h3>Email us</h3>
+                        <h4>info@crito.com</h4>
+                        <h4>support@crito.com</h4>
+                    </div>
+                </div>
+        </div>
+        <div class="__messagebox">
+            <h2>Leave us a message for any information.</h2>
+            <form id='commentForm' method="post" class="was-validated">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="username">
+                    <input asp-for="Name" class="form-control is-valid" placeholder="Name*" required />
+                    <small class="text-danger"><span ></span></small>
+                    <div class="invalid-feedback">You must enter a first name.</div>
+                </div>
+                <div class="useremail">
+                    <input class="form-control is-valid" placeholder="Email*" required />
+                    <small class="text-danger"><span ></span></small>
+                    <div class="invalid-feedback">You must enter an e-mail address.</div>
+                </div>
+                <div class="commentbox">
+                    <textarea  class="form-control is-valid" placeholder="Your Message*" required></textarea>
+                    <small class="text-danger"><span ></span></small>
+                    <div class="invalid-feedback">You must enter a message.</div>
+                </div>
+
+                <div>
+                    <button class="btn-yellow" type="submit"><span>Submit <i class="fa-regular fa-arrow-up-right"></i></span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2038.6562293124794!2d15.204771716778563!3d59.27189222266778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sse!4v1679558132597!5m2!1sen!2sse" class='location' allowFullScreen height="825" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+
+</section>

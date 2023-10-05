@@ -990,7 +990,261 @@ header > .container .__navbar .__bottom .__pages a.active::after, header > .cont
 }
 .subscribe .container input {
   width: 308px;
+  height: 50px;
+  border-radius: 40px;
+  border-style: none;
+  padding-left: 50px;
+}
+
+.article {
+  display: flex;
+}
+.article .container {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: auto auto;
+  column-gap: 120px;
+  row-gap: 80px;
+  margin-bottom: 80px;
+}
+.article .container .__title {
+  grid-column: 2 1;
+}
+.article .container .__title h2 {
+  font-family: var(--font-dm);
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.article .container .__title .__articledetails {
+  display: flex;
+  justify-content: left;
+}
+.article .container .__title .__articledetails .__dot {
+  width: 10px;
+  height: 10px;
+  background-color: #F9D783;
+  border-radius: 50%;
+  margin: 5px 20px 0 20px;
+}
+.article .container .__content {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+.article .container .__content img {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.article .container .__content .__tags {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+.article .container .__content .__tags p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F3;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 114px;
+  height: 40px;
+}
+.article .container .__search {
+  display: grid;
+  gap: 50px;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+.article .container .__search input {
+  width: 100%;
   height: 56px;
+  border-radius: 20px;
+  border-style: none;
+  background-color: #F3F3F3;
+  padding-left: 50px;
+}
+.article .container .__search .recent-posts {
+  border: 1px solid black;
+  display: grid;
+  padding: 50px;
+}
+.article .container .__search .recent-posts h4 {
+  font-family: var(--font-dm);
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.article .container .__search .recent-posts .___line {
+  border-top: 3px solid black;
+  width: 40px;
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+.article .container .__search .recent-posts a {
+  text-decoration: none;
+  color: #161616;
+}
+.article .container .__search .recent-posts a h6 {
+  font-family: var(--font-dm);
+  font-size: 16px;
+  font-weight: bold;
+}
+.article .container .__search .recent-posts a p {
+  font-size: 14;
+  color: #5E5E5E;
+}
+.article .container .__search .categories {
+  border: 1px solid black;
+  display: grid;
+  padding: 50px;
+}
+.article .container .__search .categories h4 {
+  font-family: var(--font-dm);
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.article .container .__search .categories .___line {
+  border-top: 3px solid black;
+  width: 40px;
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+.article .container .__search .categories a {
+  display: flex;
+  text-decoration: none;
+  color: #161616;
+}
+.article .container .__search .categories a h6 {
+  font-family: var(--font-dm);
+  font-size: 16px;
+  font-weight: bold;
+}
+.article .container .__search .categories a span {
+  font-family: var(--font-dm);
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px 0 10px;
+}
+.article .container .__search .categories a p {
+  font-size: 14;
+  color: #5E5E5E;
+}
+.article .container input {
+  width: 308px;
+  height: 56px;
+}
+
+.contact > .container {
+  display: flex;
+  flex-direction: column;
+}
+.contact > .container .__contactboxes {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+.contact > .container .__contactboxes .__contactbox {
+  display: flex;
+  border: 1px solid #D1D1D1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 206px;
+}
+.contact > .container .__contactboxes .__contactbox .__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  background-color: #191919;
+  color: white;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+.contact > .container .__contactboxes .__contactbox h3 {
+  font-family: var(--font-dm);
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.contact > .container .__contactboxes .__contactbox h4 {
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  color: #474747;
+}
+.contact > .container .__messagebox {
+  background-color: #F0EFE9;
+  padding: 120px;
+  border-radius: 5px;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 120px;
+}
+.contact > .container .__messagebox > h2 {
+  margin: auto;
+  width: 450px;
+  font-family: var(--font-dm);
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.contact > .container .__messagebox #commentForm .username, .contact > .container .__messagebox #commentForm .useremail {
+  display: grid;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.contact > .container .__messagebox #commentForm .username .invalid-feedback, .contact > .container .__messagebox #commentForm .useremail .invalid-feedback {
+  position: absolute;
+  bottom: -22px;
+  left: 30px;
+}
+.contact > .container .__messagebox #commentForm .username label, .contact > .container .__messagebox #commentForm .useremail label {
+  color: black;
+}
+.contact > .container .__messagebox #commentForm .username input, .contact > .container .__messagebox #commentForm .useremail input {
+  height: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: none;
+  border-radius: 50px;
+}
+.contact > .container .__messagebox #commentForm .username input::placeholder, .contact > .container .__messagebox #commentForm .useremail input::placeholder {
+  color: #8C8C8C;
+}
+.contact > .container .__messagebox #commentForm .commentbox {
+  position: relative;
+}
+.contact > .container .__messagebox #commentForm .commentbox > label {
+  color: black;
+}
+.contact > .container .__messagebox #commentForm .commentbox textarea {
+  width: 100%;
+  height: 140px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 30px;
+}
+.contact > .container .__messagebox #commentForm .commentbox .invalid-feedback {
+  position: absolute;
+  bottom: -22px;
+  left: 30px;
+}
+.contact > .container .__messagebox #commentForm .errorMessage {
+  color: var(--color-red);
+}
+.contact > .container .__messagebox #commentForm button {
+  width: 100%;
+  margin-top: 30px;
+}
+.contact .location {
+  width: 100%;
+  margin-bottom: -8px;
 }
 
 footer {

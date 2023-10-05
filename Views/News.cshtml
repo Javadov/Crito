@@ -14,7 +14,7 @@
 	var selection = Umbraco.Content(Guid.Parse("1a027da6-20b5-4449-9b74-f429740d4321"))
             .ChildrenOfType("article")
             .Where(x => x.IsVisible())
-            .OrderByDescending(x => x.CreateDate).ToList();
+            .OrderBy(x => x.CreateDate).ToList();
             
     var totalItems = selection?.Count() ?? 0;
     var pagedItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);

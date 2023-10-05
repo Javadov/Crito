@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+  var content = (ContentModels.Boxes)Model.Content;
+}
+
+<div class="__contactbox">                
+    <div class="__icon"><i class="@content.Value("boxIcon")"></i></div>                    
+    <div>
+        <h3>@content.Value("boxHeading")</h3>
+        <h4>@content.Value("boxText")</h4>
+        <h4>@content.Value("boxTextExtra")</h4>
+    </div>
+</div>
