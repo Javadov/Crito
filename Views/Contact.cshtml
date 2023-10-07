@@ -3,6 +3,8 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "SubPages.cshtml";
+	
+    var contactForm = new Crito.Models.ContactForm();
 }
 
 <!-- Contact -->
@@ -36,30 +38,32 @@
         </div>
         <div class="__messagebox">
             <h2>Leave us a message for any information.</h2>
-            <form id='commentForm' method="post" class="was-validated">
+
+            @using (Html.BeginUmbracoForm("Index", "Contact", FormMethod.Post))
+            {
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 <div class="username">
-                    <input asp-for="Name" class="form-control is-valid" placeholder="Name*" required />
-                    <small class="text-danger"><span ></span></small>
+                    <input asp-for="@contactForm.Name" class="form-control is-valid" placeholder="Name*" required />
+                    <small class="text-danger"><span asp-validation-for="@contactForm.Name"></span></small>
                     <div class="invalid-feedback">You must enter a first name.</div>
                 </div>
                 <div class="useremail">
-                    <input class="form-control is-valid" placeholder="Email*" required />
-                    <small class="text-danger"><span ></span></small>
+                    <input asp-for="@contactForm.Email" class="form-control is-valid" placeholder="Email*" required />
+                    <small class="invalid-feedback"><span asp-validation-for="@contactForm.Email"></span></small>
                     <div class="invalid-feedback">You must enter an e-mail address.</div>
                 </div>
                 <div class="commentbox">
-                    <textarea  class="form-control is-valid" placeholder="Your Message*" required></textarea>
-                    <small class="text-danger"><span ></span></small>
+                    <textarea asp-for="@contactForm.Message"  class="form-control is-valid" placeholder="Your Message*" required></textarea>
+                    <small class="text-danger"><span></span></small>
                     <div class="invalid-feedback">You must enter a message.</div>
                 </div>
 
                 <div>
                     <button class="btn-yellow" type="submit"><span>Submit <i class="fa-regular fa-arrow-up-right"></i></span></button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 
